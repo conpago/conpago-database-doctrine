@@ -1,0 +1,32 @@
+<?php
+	/**
+	 * Created by PhpStorm.
+	 * User: Bartosz Gołek
+	 * Date: 2014-06-24
+	 * Time: 21:13
+	 */
+
+	namespace Saigon\Conpago\Database\Doctrine;
+
+	class EntityManagerFactoryTest extends \PHPUnit_Framework_TestCase
+	{
+		private $dbConfig;
+		private $doctrineConfig;
+
+		/**
+		 * @var EntityManagerFactory
+		 */
+		private $entityManagerFactory;
+
+		protected function setUp()
+		{
+			//$this->dbConfig = $this->getMock('Saigon\Conpago\Database\Contract\IDbConfig');
+			//$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
+			//$this->entityManagerFactory = new EntityManagerFactory($this->dbConfig, $this->doctrineConfig);
+		}
+
+		function testCreateLogger()
+		{
+			//$this->assertInstanceOf('Doctrine\ORM\EntityManager', $this->entityManagerFactory->createEntityManager());
+		}
+	}
