@@ -14,6 +14,13 @@
 	use Saigon\Conpago\Database\Contract\IDbConfig;
 	use Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig;
 
+	/**
+	 * Class EntityManagerFactory
+	 *
+	 * @package Saigon\Conpago\Database\Doctrine
+	 *
+	 * @SuppressWarnings(PHPMD.StaticAccess)
+	 */
 	class EntityManagerFactory
 	{
 		private $config;
