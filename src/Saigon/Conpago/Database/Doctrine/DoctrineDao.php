@@ -19,7 +19,7 @@
 		private $doctrineConfig;
 
 		/**
-		 * @var
+		 * @var EntityManagerInterface
 		 */
 		private $entityManager;
 

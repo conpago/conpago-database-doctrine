@@ -20,13 +20,20 @@
 
 		protected function setUp()
 		{
-			//$this->dbConfig = $this->getMock('Saigon\Conpago\Database\Contract\IDbConfig');
-			//$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
-			//$this->entityManagerFactory = new EntityManagerFactory($this->dbConfig, $this->doctrineConfig);
+			$this->getDbConfigMock();
+
+			$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
+			$this->entityManagerFactory = new EntityManagerFactory($this->dbConfig, $this->doctrineConfig);
 		}
 
 		function testCreateLogger()
 		{
-			//$this->assertInstanceOf('Doctrine\ORM\EntityManager', $this->entityManagerFactory->createEntityManager());
+			$this->assertInstanceOf('Doctrine\ORM\EntityManager', $this->entityManagerFactory->createEntityManager());
+		}
+
+		protected function getDbConfigMock()
+		{
+			$this->dbConfig = $this->getMock('Saigon\Conpago\Database\Contract\IDbConfig');
+			$this->dbConfig->expects($this->any())->method('getDriver')->willReturn('pdo_sqlite');
 		}
 	}
