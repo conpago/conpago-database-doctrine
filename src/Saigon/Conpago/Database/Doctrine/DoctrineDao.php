@@ -10,8 +10,9 @@
 
 	use Doctrine\ORM\EntityManagerInterface;
 	use Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig;
+	use Saigon\Conpago\Database\Doctrine\Contract\IDoctrineDao;
 
-	abstract class DoctrineDao
+	class DoctrineDao implements IDoctrineDao
 	{
 		/**
 		 * @var IDoctrineConfig
@@ -38,15 +39,15 @@
 		 *
 		 * @return string
 		 */
-		protected function getModelClassName($shortClassName)
+		public function getModelClassName($shortClassName)
 		{
 			return $this->doctrineConfig->getModelNamespace() . "\\" . $shortClassName;
 		}
 
 		/**
-		 * @return \Doctrine\ORM\EntityManager
+		 * @return \Doctrine\ORM\EntityManagerInterface
 		 */
-		protected function getEntityManager()
+		public function getEntityManager()
 		{
 			return $this->entityManager;
 		}

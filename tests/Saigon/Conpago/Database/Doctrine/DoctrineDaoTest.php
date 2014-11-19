@@ -19,36 +19,26 @@
 		 */
 		private $entityManager;
 
+		/**
+		 * @var DoctrineDao
+		 */
 		private $doctrineDao;
 
 		protected function setUp()
 		{
 			$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
 			$this->entityManager = $this->getMock('Doctrine\ORM\EntityManagerInterface');
-			$this->doctrineDao = new TestDoctrineDao($this->doctrineConfig, $this->entityManager);
+			$this->doctrineDao = new DoctrineDao($this->doctrineConfig, $this->entityManager);
 		}
 
 		function testGetModelClassName()
 		{
 			$this->doctrineConfig->expects($this->any())->method('getModelNamespace')->willReturn('Model');
-			$this->assertEquals('Model\Test', $this->doctrineDao->publicGetModelClassName('Test'));
+			$this->assertEquals('Model\Test', $this->doctrineDao->getModelClassName('Test'));
 		}
 
 		function testGetEntityManager()
 		{
-			$this->assertSame($this->entityManager, $this->doctrineDao->publicGetEntityManager());
-		}
-	}
-
-	class TestDoctrineDao extends DoctrineDao
-	{
-		function publicGetModelClassName($shortClassName)
-		{
-			return $this->getModelClassName($shortClassName);
-		}
-
-		function publicGetEntityManager()
-		{
-			return $this->getEntityManager();
+			$this->assertSame($this->entityManager, $this->doctrineDao->getEntityManager());
 		}
 	}
