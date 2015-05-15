@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<project name="TeamMate" default="build" basedir=".">
-	<description>TeamMate</description>
+<project name="Conpago.Database.Doctrine" default="build" basedir=".">
+	<description>Conpago.Database.Doctrine</description>
 
 	<property name="src" location="src"/>
 	<property name="lib" location="lib"/>

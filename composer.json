@@ -15,14 +15,14 @@
 			"type": "hg",
 			"url": "http://scm.golek.biz/scm/hg/Conpago.Database.Doctrine.Contract"
 		},
-        {
-            "type": "hg",
-            "url": "http://scm.golek.biz/scm/hg/Conpago.Contract"
-        }
+		{
+			"type": "hg",
+			"url": "http://scm.golek.biz/scm/hg/Conpago.Contract"
+		}
 	],
 	"require": {
 		"saigon/conpago-database-doctrine-contract": "dev-master",
-        "saigon/conpago-contract": "dev-master"
+		"saigon/conpago-contract": "dev-master"
 	},
 	"require-dev": {
 		"pdepend/pdepend": "*",
