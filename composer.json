@@ -1,8 +1,9 @@
 {
 	"name": "saigon/conpago-database-doctrine",
-	"description": "Conpago.Database.Doctrine",
+	"description": "Doctrine ORM adapter implementation for Conpago framework.",
 	"version": "0.0.1-alpha",
 	"type": "library",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Bartosz Gołek",
@@ -10,19 +11,9 @@
 			"homepage": "http://bartosz.golek.biz"
 		}
 	],
-	"repositories": [
-		{
-			"type": "hg",
-			"url": "http://scm.golek.biz/scm/hg/Conpago.Database.Doctrine.Contract"
-		},
-		{
-			"type": "hg",
-			"url": "http://scm.golek.biz/scm/hg/Conpago.Contract"
-		}
-	],
 	"require": {
-		"saigon/conpago-database-doctrine-contract": "dev-master",
-		"saigon/conpago-contract": "dev-master"
+		"saigon/conpago-database-doctrine-contract": "dev-default",
+		"saigon/conpago-contract": "dev-default"
 	},
 	"require-dev": {
 		"pdepend/pdepend": "*",
