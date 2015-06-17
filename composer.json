@@ -12,8 +12,8 @@
 		}
 	],
 	"require": {
-		"conpago/conpago-database-doctrine-contract": "dev-default",
-		"conpago/conpago-contract": "dev-default"
+		"conpago/conpago-database-doctrine-contract": "dev-master",
+		"conpago/conpago-contract": "dev-master"
 	},
 	"require-dev": {
 		"pdepend/pdepend": "*",
