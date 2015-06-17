@@ -6,18 +6,18 @@
 	 * Time: 20:56
 	 */
 
-	namespace Saigon\Conpago\Database\Doctrine;
+	namespace Conpago\Database\Doctrine;
 
 	use Doctrine\ORM\EntityManager;
 	use Doctrine\ORM\EntityManagerInterface;
 	use Doctrine\ORM\Tools\Setup;
-	use Saigon\Conpago\Database\Contract\IDbConfig;
-	use Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig;
+	use Conpago\Database\Contract\IDbConfig;
+	use Conpago\Database\Doctrine\Contract\IDoctrineConfig;
 
 	/**
 	 * Class EntityManagerFactory
 	 *
-	 * @package Saigon\Conpago\Database\Doctrine
+	 * @package Conpago\Database\Doctrine
 	 *
 	 * @SuppressWarnings(PHPMD.StaticAccess)
 	 */

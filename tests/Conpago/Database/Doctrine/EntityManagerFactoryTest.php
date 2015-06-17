@@ -6,7 +6,7 @@
 	 * Time: 21:13
 	 */
 
-	namespace Saigon\Conpago\Database\Doctrine;
+	namespace Conpago\Database\Doctrine;
 
 	class EntityManagerFactoryTest extends \PHPUnit_Framework_TestCase
 	{
@@ -22,7 +22,7 @@
 		{
 			$this->getDbConfigMock();
 
-			$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
+			$this->doctrineConfig = $this->getMock('Conpago\Database\Doctrine\Contract\IDoctrineConfig');
 			$this->entityManagerFactory = new EntityManagerFactory($this->dbConfig, $this->doctrineConfig);
 		}
 
@@ -33,7 +33,7 @@
 
 		protected function getDbConfigMock()
 		{
-			$this->dbConfig = $this->getMock('Saigon\Conpago\Database\Contract\IDbConfig');
+			$this->dbConfig = $this->getMock('Conpago\Database\Contract\IDbConfig');
 			$this->dbConfig->expects($this->any())->method('getDriver')->willReturn('pdo_sqlite');
 			$this->dbConfig->expects($this->any())->method('getUser')->willReturn('');
 			$this->dbConfig->expects($this->any())->method('getPassword')->willReturn('');

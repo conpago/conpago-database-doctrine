@@ -6,7 +6,7 @@
 	 * Time: 21:23
 	 */
 
-	namespace Saigon\Conpago\Database\Doctrine;
+	namespace Conpago\Database\Doctrine;
 
 	class DoctrineDaoTest extends \PHPUnit_Framework_TestCase
 	{
@@ -26,7 +26,7 @@
 
 		protected function setUp()
 		{
-			$this->doctrineConfig = $this->getMock('Saigon\Conpago\Database\Doctrine\Contract\IDoctrineConfig');
+			$this->doctrineConfig = $this->getMock('Conpago\Database\Doctrine\Contract\IDoctrineConfig');
 			$this->entityManager = $this->getMock('Doctrine\ORM\EntityManagerInterface');
 			$this->doctrineDao = new DoctrineDao($this->doctrineConfig, $this->entityManager);
 		}

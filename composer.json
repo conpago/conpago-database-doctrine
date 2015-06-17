@@ -1,5 +1,5 @@
 {
-	"name": "saigon/conpago-database-doctrine",
+	"name": "conpago/conpago-database-doctrine",
 	"description": "Doctrine ORM adapter implementation for Conpago framework.",
 	"version": "0.0.1-alpha",
 	"type": "library",
@@ -12,8 +12,8 @@
 		}
 	],
 	"require": {
-		"saigon/conpago-database-doctrine-contract": "dev-default",
-		"saigon/conpago-contract": "dev-default"
+		"conpago/conpago-database-doctrine-contract": "dev-default",
+		"conpago/conpago-contract": "dev-default"
 	},
 	"require-dev": {
 		"pdepend/pdepend": "*",
@@ -24,7 +24,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Saigon\\Conpago\\Database\\Doctrine\\": "src/"
+			"Conpago\\Database\\Doctrine\\": "src/"
 		}
 	}
 }
