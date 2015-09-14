@@ -56,12 +56,7 @@
 
 		private function setDbParams()
 		{
-			$this->dbParams = array(
-				'driver' => $this->dbConfig->getDriver(),
-				'user' => $this->dbConfig->getUser(),
-				'password' => $this->dbConfig->getPassword(),
-				'dbname' => $this->dbConfig->getDbName()
-			);
+			$this->dbParams = $this->dbConfig->getConfig();
 		}
 
 		/**

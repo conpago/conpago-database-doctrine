@@ -34,9 +34,6 @@
 		protected function getDbConfigMock()
 		{
 			$this->dbConfig = $this->getMock('Conpago\Database\Contract\IDbConfig');
-			$this->dbConfig->expects($this->any())->method('getDriver')->willReturn('pdo_sqlite');
-			$this->dbConfig->expects($this->any())->method('getUser')->willReturn('');
-			$this->dbConfig->expects($this->any())->method('getPassword')->willReturn('');
-			$this->dbConfig->expects($this->any())->method('getDbName')->willReturn('');
+			$this->dbConfig->expects($this->any())->method('getConfig')->willReturn(array('driver' => 'pdo_sqlite'));
 		}
 	}
