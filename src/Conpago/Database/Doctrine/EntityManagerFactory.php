@@ -51,7 +51,7 @@
 			$paths = array($this->doctrineConfig->getModelPath());
 
 			$this->setDbParams();
-			$this->config = Setup::createAnnotationMetadataConfiguration($paths, $this->doctrineConfig->getDevMode());
+			$this->config = Setup::createAnnotationMetadataConfiguration($paths, $this->doctrineConfig->isInDevMode());
 		}
 
 		private function setDbParams()

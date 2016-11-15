@@ -8,7 +8,10 @@
 
 	namespace Conpago\Database\Doctrine;
 
-	class DoctrineDaoTest extends \PHPUnit_Framework_TestCase
+	use Conpago\Database\Doctrine\Contract\IDoctrineConfig;
+    use Doctrine\ORM\EntityManagerInterface;
+
+    class DoctrineDaoTest extends \PHPUnit_Framework_TestCase
 	{
 		/**
 		 * @var \PHPUnit_Framework_MockObject_MockObject
@@ -26,8 +29,8 @@
 
 		protected function setUp()
 		{
-			$this->doctrineConfig = $this->getMock('Conpago\Database\Doctrine\Contract\IDoctrineConfig');
-			$this->entityManager = $this->getMock('Doctrine\ORM\EntityManagerInterface');
+			$this->doctrineConfig = $this->createMock(IDoctrineConfig::class);
+			$this->entityManager = $this->createMock(EntityManagerInterface::class);
 			$this->doctrineDao = new DoctrineDao($this->doctrineConfig, $this->entityManager);
 		}
 

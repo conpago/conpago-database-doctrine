@@ -8,7 +8,10 @@
 
 	namespace Conpago\Database\Doctrine;
 
-	class EntityManagerFactoryTest extends \PHPUnit_Framework_TestCase
+	use Conpago\Database\Contract\IDbConfig;
+    use Conpago\Database\Doctrine\Contract\IDoctrineConfig;
+
+    class EntityManagerFactoryTest extends \PHPUnit_Framework_TestCase
 	{
 		private $dbConfig;
 		private $doctrineConfig;
@@ -22,7 +25,7 @@
 		{
 			$this->getDbConfigMock();
 
-			$this->doctrineConfig = $this->getMock('Conpago\Database\Doctrine\Contract\IDoctrineConfig');
+			$this->doctrineConfig = $this->createMock(IDoctrineConfig::class);
 			$this->entityManagerFactory = new EntityManagerFactory($this->dbConfig, $this->doctrineConfig);
 		}
 
@@ -33,7 +36,7 @@
 
 		protected function getDbConfigMock()
 		{
-			$this->dbConfig = $this->getMock('Conpago\Database\Contract\IDbConfig');
+			$this->dbConfig = $this->createMock(IDbConfig::class);
 			$this->dbConfig->expects($this->any())->method('getConfig')->willReturn(array('driver' => 'pdo_sqlite'));
 		}
 	}
