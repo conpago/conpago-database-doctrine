@@ -1,54 +1,43 @@
 <?php
-	/**
-	 * Created by PhpStorm.
-	 * User: Bartosz Gołek
-	 * Date: 09.11.13
-	 * Time: 15:30
-	 */
+namespace Conpago\Database\Doctrine;
 
-	namespace Conpago\Database\Doctrine;
+use Doctrine\ORM\EntityManagerInterface;
+use Conpago\Database\Doctrine\Contract\IDoctrineConfig;
+use Conpago\Database\Doctrine\Contract\IDoctrineDao;
 
-	use Doctrine\ORM\EntityManagerInterface;
-	use Conpago\Database\Doctrine\Contract\IDoctrineConfig;
-	use Conpago\Database\Doctrine\Contract\IDoctrineDao;
+class DoctrineDao implements IDoctrineDao
+{
+    /** @var IDoctrineConfig */
+    private $doctrineConfig;
 
-	class DoctrineDao implements IDoctrineDao
-	{
-		/**
-		 * @var IDoctrineConfig
-		 */
-		private $doctrineConfig;
+    /** @var EntityManagerInterface */
+    private $entityManager;
 
-		/**
-		 * @var EntityManagerInterface
-		 */
-		private $entityManager;
+    /**
+     * @param IDoctrineConfig $doctrineConfig
+     * @param EntityManagerInterface $entityManager
+     */
+    public function __construct(IDoctrineConfig $doctrineConfig, EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+        $this->doctrineConfig = $doctrineConfig;
+    }
 
-		/**
-		 * @param IDoctrineConfig $doctrineConfig
-		 * @param EntityManagerInterface $entityManager
-		 */
-		public function __construct(IDoctrineConfig $doctrineConfig, EntityManagerInterface $entityManager)
-		{
-			$this->entityManager = $entityManager;
-			$this->doctrineConfig = $doctrineConfig;
-		}
+    /**
+     * @param string $shortClassName
+     *
+     * @return string
+     */
+    public function getModelClassName(string $shortClassName): string
+    {
+        return $this->doctrineConfig->getModelNamespace() . "\\" . $shortClassName;
+    }
 
-		/**
-		 * @param $shortClassName
-		 *
-		 * @return string
-		 */
-		public function getModelClassName($shortClassName)
-		{
-			return $this->doctrineConfig->getModelNamespace() . "\\" . $shortClassName;
-		}
-
-		/**
-		 * @return \Doctrine\ORM\EntityManagerInterface
-		 */
-		public function getEntityManager()
-		{
-			return $this->entityManager;
-		}
-	}
+    /**
+     * @return EntityManagerInterface
+     */
+    public function getEntityManager(): EntityManagerInterface
+    {
+        return $this->entityManager;
+    }
+}
